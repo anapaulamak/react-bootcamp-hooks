@@ -1,16 +1,30 @@
-import React, { useState, useEffect } from 'react';
-import Card from '../card/card';
+import React from 'react';
 
-export default function Details (props){
-  console.log(items[0])
+export default function CardList (props){
+
 
   return(
-    <div>
-      <p>{item.title}</p>
-      <p>{item.description}</p>
-      <p>{item.director}</p>
-      <p>{item.release_date}</p>
-      <p>{item.rt_score}</p>
-    </div>
+    <>
+      <div className="detail">
+        <label> Título: </label>
+        <p>{props.title}</p>
+
+        <label> Descrição: </label>
+        <p>{props.description}</p>
+
+        <label> Diretor: </label>
+        <p>{props.director}</p>
+
+        <label> Produtor: </label>
+        <p>{props.producer}</p>
+
+        <label> Data: </label>
+        <p>{props.release_date}</p>
+
+        <label> Score: </label>
+        <p>{props.rt_score}</p>
+
+      </div>
+    </>
   )
 }

@@ -17,19 +17,17 @@ export default function CardList (props){
       })
   },[]);
 
-  const showDetails = (item) => {
-    return item.id;
-  }
-
   return(
-    <div className="list">
-      {items.map(item => 
-        <Card 
-          title={item.title}
-          description={item.description}
-          onClick={() => showDetails(item)}
-        />
-      )}
-    </div>
+    <>
+      <div className="list">
+        {items.map(item => 
+          <Card 
+            title={item.title}
+            description={item.description}
+            onClick={() => console.log(item)}
+          />
+        )}
+      </div>
+    </>
   )
 }
