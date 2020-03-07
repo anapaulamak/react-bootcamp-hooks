@@ -1,0 +1,43 @@
+.card{
+  width: 350px;
+  min-height: 300px;
+  margin: 10px;
+  background-color: #fff;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.card header{
+  font-size: 20px;
+  padding: 20px 0px;
+  background: linear-gradient(90deg, rgba(239,180,247,1) 10%, rgba(146,173,238,1) 72%);
+  color: #fff;
+  border-top-left-radius: 8px;
+  border-top-right-radius: 8px;
+}
+
+.card:nth-child(2n) header{
+  background: linear-gradient(90deg, rgba(195,247,180,1) 10%, rgba(146,173,238,1) 72%);
+}
+
+.card:nth-child(3n) header{
+  background: linear-gradient(90deg, rgba(247,180,214,1) 10%, rgba(219,238,146,1) 72%);
+}
+
+.card:nth-child(5n) header{
+  background: linear-gradient(90deg, rgba(247,216,180,1) 10%, rgba(238,146,152,1) 72%);
+}
+
+.card body{
+  text-align: justify;
+  padding: 30px;
+  color: #616161;
+  display: -webkit-box;
+  -webkit-line-clamp: 6;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  line-height: 1.5;
+  border-bottom-left-radius: 8px;
+  border-bottom-right-radius: 8px;
+}
