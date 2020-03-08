@@ -5,14 +5,18 @@ import CardList from './components/cardList/cardList'
 import Detail from './components/detail/detail'
 import './App.css'
 import { Switch, Route, BrowserRouter } from 'react-router-dom'
+import Loader from 'react-loader-spinner'
 
 function App(props) {
   const [items, setItems] = useState([])
-  
+  const [loading, setLoading] = useState(false)
+
   useEffect(() => {
+    setLoading(true)
     axios
       .get('https://ghibliapi.herokuapp.com/films')
       .then(({ data }) => {
+        setLoading(false)
         setItems(data);
       })
       .catch(function(err) {
@@ -23,17 +27,20 @@ function App(props) {
   return (
     <div className="App">
       <Header />
-      <BrowserRouter>
-        <Switch>
-          <Route path='/list'>
-            <CardList items={items} />
-          </Route>
-          <Route path='/:id' >
-            <Detail />
-          </Route >
-        </Switch>
-      </BrowserRouter>
-
+      {loading ?
+        <Loader type="Oval" color="#655b5b" height={50} width={50}/>
+        :
+        <BrowserRouter>
+          <Switch>
+            <Route path='/list'>
+              <CardList items={items} />
+            </Route>
+            <Route path='/:id' >
+              <Detail />
+            </Route >
+          </Switch>
+        </BrowserRouter>
+      }
     </div>
   )
 }
