@@ -1,11 +1,12 @@
-import React from 'react';
+import React from 'react'
 import './card.styled.css'
+import {Link} from 'react-router-dom'
 
 export default function Card (props){
   return(
-    <div className="card" onClick={props.onClick}>
+    <Link className="card" to={props.to} onClick={props.onClick}>
       <header>{props.title}</header>
       <body>{props.description}</body>
-    </div>
+    </Link>
   )
 }

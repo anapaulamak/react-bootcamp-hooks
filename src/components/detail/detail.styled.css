@@ -1,0 +1,36 @@
+.detail{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.infos{
+  list-style: none;
+  text-align: left;
+  margin: 0px 30%;
+  background: linear-gradient(90deg, rgba(239,180,247,.50) 10%, rgba(146,173,238,.50) 72%);
+  padding: 30px;
+  border-radius: 10px;
+}
+
+.infos li{
+  margin: 8px 0px;
+  line-height: 2;
+  color: #655b5b;
+}
+
+@media (max-width: 750px) {
+  .infos{
+    margin: 0px 10%;
+  }
+}
+
+button{
+  background: #d5d3ff;
+  border: none;
+  border-radius: 10px;
+  padding: 10px 50px;
+  margin: 20px;
+  color: #655b5b;
+  font-size: 15px;
+}

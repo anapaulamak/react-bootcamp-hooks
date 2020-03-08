@@ -5,6 +5,7 @@
   background-color: #fff;
   border-radius: 5px;
   cursor: pointer;
+  text-decoration: none;
 }
 
 .card header{
@@ -32,6 +33,7 @@
   text-align: justify;
   padding: 30px;
   color: #616161;
+  background-color: #fff;
   display: -webkit-box;
   -webkit-line-clamp: 6;
   -webkit-box-orient: vertical;

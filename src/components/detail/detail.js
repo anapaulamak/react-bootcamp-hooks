@@ -1,14 +1,18 @@
-import React, { useState, useEffect }  from 'react';
-import axios from "axios";
+import React, { useState, useEffect }  from 'react'
+import { useParams, useHistory } from 'react-router-dom'
+import axios from "axios"
+import './detail.styled.css'
+
 
 export default function Detail (props){
   const [item, setItem] = useState([])
+  let {id} = useParams();
+  let history = useHistory();
 
   useEffect(() => {
-    let movie_id = '2baf70d1-42bb-4437-b551-e5fed5a87abe';
-
+    const matchId = {id}
     axios
-      .get(`https://ghibliapi.herokuapp.com/films/${movie_id}`)
+      .get(`https://ghibliapi.herokuapp.com/films/${matchId.id}`)
       .then(({ data }) => {
         setItem(data);
       })
@@ -19,25 +23,37 @@ export default function Detail (props){
 
   return(
     <>
-      <div className="detail">
-        <label> Título: </label>
-        <p>{item.title}</p>
+      <div className="detail" >
+        <h1>Detalhes do filme</h1>
 
-        <label> Descrição: </label>
-        <p>{item.description}</p>
+        <ul className='infos'>
+            <li>
+              <label> Título: </label>
+              <label>{item.title}</label>
+            </li>
+            <li>
+              <label> Descrição: </label>
+              <label>{item.description}</label>
+            </li>
+            <li>
+              <label> Descrição: </label>
+              <label>{item.director}</label>
+            </li>
+            <li>
+              <label> Produtor: </label>
+              <label>{item.director}</label>
+            </li>
+            <li>
+              <label> Data: </label>
+              <label>{item.release_date}</label>
+            </li>
+            <li>
+              <label> Score:  </label>
+              <label>{item.rt_score}</label>
+            </li>
+          </ul>
 
-        <label> Diretor: </label>
-        <p>{item.director}</p>
-
-        <label> Produtor: </label>
-        <p>{item.producer}</p>
-
-        <label> Data: </label>
-        <p>{item.release_date}</p>
-
-        <label> Score: </label>
-        <p>{item.rt_score}</p>
-
+        <button onClick={() => history.goBack()} > Voltar </button>
       </div>
     </>
   )
