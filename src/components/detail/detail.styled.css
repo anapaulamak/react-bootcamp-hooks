@@ -8,7 +8,7 @@
   list-style: none;
   text-align: left;
   margin: 0px 30%;
-  background: linear-gradient(90deg, rgba(239,180,247,.50) 10%, rgba(146,173,238,.50) 72%);
+  background: linear-gradient(90deg, rgba(239,180,247,.30) 10%, rgba(146,173,238,.30) 72%);
   padding: 30px;
   border-radius: 10px;
 }
